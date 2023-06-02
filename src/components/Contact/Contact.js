@@ -11,7 +11,7 @@ function Contact() {
             <span>mpr10@iitbbs.ac.in</span>
             <a
               className="btn PrimaryBtn"
-              href="mailto:your_email@gmail.com"
+              href="mailto:mpr10@iitbbs.ac.in"
               target="_blank"
               rel="noopener noreferrer"
             >
