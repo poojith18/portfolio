@@ -3,7 +3,7 @@ export const ProjectList = [
   {
     // img: "https://raw.githubusercontent.com/gurupawar/website/main/src/Assets/project_3.png",
     title: "Self Driving Toy Car",
-    description: "Worked on Raspberry Pi-based Self Driving Toy Car which is capable of autonomous driving using Deep Neural networks at Design Innovation Center(DIC), IIT Bhubaneswar. I have Used Robotic Operating System(ROS) as middleware suite between hardware and Deep learning-based auto-pilot.",
+    description: "At the Design Innovation Center (DIC), IIT Bhubaneswar, I was involved in the development of a Raspberry Pi-based self-driving toy car. The car was designed to have autonomous driving capabilities using deep neural networks. To facilitate communication between the hardware components and the deep learning-based auto-pilot, I utilized the Robotic Operating System (ROS) as a middleware suite.",
     tech_stack: "Deep Learning, ROS",
     // github_url: "https://your_project_github_link",
     // demo_url: "https://your_project_demo_link",
@@ -11,7 +11,7 @@ export const ProjectList = [
   {
     // img: "https://raw.githubusercontent.com/gurupawar/website/main/src/Assets/project_3.png",
     title: "Face Recognition web application",
-    description: "Developed a Face Recognition web application from scratch with Machine Learning in Flask. It includes Image Processing with OpenCV, necessary image analysis, required preprocessing, computing Eigen images using principal component analysis for feature extraction, training and testing the Machine learning model, hyperparameter tuning using the Grid search method. I have developed a web server gateway interphase in flask by rendering HTML, CSS and bootstrap in the frontend and in the backend written in Python and then integrating the machine learning model to Flask App.",
+    description: "I developed a Face Recognition web application using machine learning, OpenCV, and the Flask framework. The application was built entirely from scratch, involving the development of a web server gateway interface in Flask. I utilized HTML, CSS, and Bootstrap to design and style the frontend of the application. On the backend, I wrote the necessary Python code and seamlessly integrated the machine learning model into the Flask application. This resulted in a functional web application capable of performing face recognition tasks.",
     tech_stack: "OpenCV, Python, Flask",
     // github_url: "https://your_project_github_link",
     // demo_url: "https://your_project_demo_link",
@@ -27,7 +27,7 @@ export const ProjectList = [
   {
     // img: "https://raw.githubusercontent.com/gurupawar/website/main/src/Assets/project_3.png",
     title: "Timetable Management System",
-    description: "Created a portal for the administrator to easily manage all the information of Timetable, Faculty, Student, Subject, availability of classrooms.It provides many functionalities such as Searching, Editing, filtering based on Faculty, classroom, etc.It generates the semester-wise timetable reports for Faculty, Students and those reports can be easily export to different formats such as PDF, CSV, etc",
+    description: "I developed an administrator portal that simplifies the management of various information related to Timetable, Faculty, Student, Subject, and classroom availability. The portal offers a range of functionalities, including searching, editing, and filtering based on criteria such as Faculty and classroom. Additionally, it generates semester-wise timetable reports for Faculty and Students, which can be conveniently exported to different formats like PDF and CSV.",
     tech_stack: "DBMS",
     // github_url: "https://your_project_github_link",
     // demo_url: "https://your_project_demo_link",
