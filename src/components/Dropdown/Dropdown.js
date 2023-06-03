@@ -64,19 +64,48 @@ function Dropdown({ isOpen, toggle }) {
         <NavLink
           onClick={toggle}
           className="menu-item"
-          to="projects"
-          smooth={true}
-        >
-          Projects
-        </NavLink>
-        <NavLink
-          onClick={toggle}
-          className="menu-item"
           to="about"
           smooth={true}
         >
           About
         </NavLink>
+
+        <NavLink
+          onClick={toggle}
+          className="menu-item"
+          to="education"
+          smooth={true}
+        >
+          Education
+        </NavLink>
+
+        <NavLink
+          onClick={toggle}
+          className="menu-item"
+          to="experience"
+          smooth={true}
+        >
+          Experience
+        </NavLink>
+
+        <NavLink
+          onClick={toggle}
+          className="menu-item"
+          to="projects"
+          smooth={true}
+        >
+          Projects
+        </NavLink>
+
+        <NavLink
+          onClick={toggle}
+          className="menu-item"
+          to="skills"
+          smooth={true}
+        >
+          Skills
+        </NavLink>
+
         <NavLink
           onClick={toggle}
           className="menu-item"
@@ -89,7 +118,7 @@ function Dropdown({ isOpen, toggle }) {
       <NavBtn onClick={toggle}>
         <a
           className="btn PrimaryBtn"
-          href="https://github.com/gurupawar/"
+          href="https://drive.google.com/file/d/1LExy6F3hmUVBAX9xUe_hX7kUrs8xGAKu/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >

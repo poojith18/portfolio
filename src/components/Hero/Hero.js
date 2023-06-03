@@ -3,6 +3,7 @@ import Dropdown from "../Dropdown/Dropdown";
 import Header from "../Header/Header";
 import FixSocialIcon from "../SocialIcon/FixSocialIcon";
 import { NavBtn } from "../Header/HeaderElements";
+import Scroll from './scroll.svg';
 import {
   HeroContainer,
   HeroWrapper,
@@ -53,7 +54,7 @@ function Hero() {
           <ScrollLink>
             Scroll down
             <img
-              src="https://raw.githubusercontent.com/gurupawar/website/main/src/Assets/scroll-down.svg"
+              src={Scroll}
               alt="scroll-down"
             />
           </ScrollLink>
