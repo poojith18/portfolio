@@ -1,166 +1,162 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-body {
-  font-family: "Poppins", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* background: #fafaff; */
-  background: #f3f6fc;
-  font-weight: 400;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
-main {
-  background: #151418;
-  /* background-image: url(https://raw.githubusercontent.com/gurupawar/website/main/src/Assets/blob-haikei.svg); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  text-decoration: none;
-  color: inherit;
-  background-color: transparent;
-}
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 40 20% 95%;
 
-ul,
-ol {
-  list-style: none;
-}
+    --card: 220 18% 10%;
+    --card-foreground: 40 20% 95%;
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
+    --popover: 220 18% 10%;
+    --popover-foreground: 40 20% 95%;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
-}
+    --primary: 24 85% 60%;
+    --primary-foreground: 220 20% 7%;
 
-img,
-video {
-  display: block;
-  max-width: 100%;
-}
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 40 20% 95%;
 
-.btn {
-  border: 2px solid rgb(57, 134, 250);
-  padding: 10px 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  font-weight: 400;
-  outline: none;
-}
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
 
-.PrimaryBtn {
-  background: rgb(57, 134, 250);
-  color: #f6f6f6;
-}
+    --accent: 24 85% 60%;
+    --accent-foreground: 220 20% 7%;
 
-.PrimaryBtn:hover {
-  background: #fff;
-  color: #010606;
-}
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 20% 95%;
 
-.SecondarBtn:hover {
-  background: rgb(57, 134, 250);
-  color: #fff;
-}
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 24 85% 60%;
 
-.btn2 {
-  margin-right: 1rem;
-}
+    --radius: 0.5rem;
 
-.Container {
-  width: 100%;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  margin-right: auto;
-  margin-left: auto;
-}
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(24 85% 60% / 0.1), hsl(220 20% 7%));
+    --gradient-card: linear-gradient(180deg, hsl(220 18% 12%), hsl(220 18% 8%));
+    --shadow-glow: 0 0 60px hsl(24 85% 60% / 0.15);
+    --shadow-card: 0 20px 40px -15px hsl(0 0% 0% / 0.5);
 
-.BigCard {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
-  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05); */
-}
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 24 85% 60%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 24 85% 60%;
+  }
 
-.AboutBio,
-.tagline2 {
-  text-align: center;
-  max-width: 650px;
-  margin: 0 auto;
-  color: #151418;
-  line-height: 1.6;
-}
+  .dark {
+    --background: 220 20% 7%;
+    --foreground: 40 20% 95%;
 
-.tagline2 {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
+    --card: 220 18% 10%;
+    --card-foreground: 40 20% 95%;
 
-.SectionTitle {
-  font-size: 28px;
-  color: #151418;
-  font-weight: 700;
-  margin-bottom: 3.5rem;
-}
-.ProjectWrapper {
-  margin-top: -1rem;
-}
+    --popover: 220 18% 10%;
+    --popover-foreground: 40 20% 95%;
 
-/* ------------------------------------ Media for Container */
-@media (min-width: 576px) {
-  .Container {
-    max-width: 540px;
+    --primary: 24 85% 60%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 24 85% 60%;
+    --accent-foreground: 220 20% 7%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 20% 95%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 24 85% 60%;
+
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 24 85% 60%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 24 85% 60%;
   }
 }
-@media (min-width: 768px) {
-  .Container {
-    max-width: 720px;
+
+@layer base {
+  * {
+    @apply border-border;
   }
-  .ProjectWrapper {
-    margin-top: -5rem;
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
   }
 }
-@media (min-width: 992px) {
-  .Container {
-    max-width: 960px;
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-400;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 ease-out hover:-translate-y-1;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-1 {
+    animation: fadeUp 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-2 {
+    animation: fadeUp 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-3 {
+    animation: fadeUp 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
   }
 }
-@media (min-width: 1200px) {
-  .Container {
-    max-width: 1000px;
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
