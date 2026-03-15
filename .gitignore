@@ -1,0 +1,7 @@
+node_modules/
+dist/
+PORTFOLIO_GUIDE.md
+.DS_Store
+.vscode/
+bun.lock
+bun.lockb
