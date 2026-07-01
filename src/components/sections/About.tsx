@@ -1,50 +1,57 @@
+import { type RefObject } from "react";
+import { aboutStats } from "@/data/site";
+import { aboutContent } from "@/data/content";
+import { useCountUp } from "@/hooks/useCountUp";
+import { useInView } from "@/hooks/useInView";
+import Reveal from "@/components/Reveal";
+
+const StatItem = ({ stat }: { stat: (typeof aboutStats)[number] }) => {
+  const { ref, inView } = useInView({ threshold: 0.5, once: true });
+  const numericValue = stat.value ?? 0;
+  const count = useCountUp(numericValue, 1200, inView && stat.value !== null);
+
+  const display = "display" in stat ? stat.display : `${count}${stat.suffix}`;
+
+  return (
+    <div ref={ref as RefObject<HTMLDivElement>} className="text-center md:text-left">
+      <p className="font-display text-4xl md:text-5xl text-primary mb-2 tabular-nums">{display}</p>
+      <p className="text-muted-foreground text-sm tracking-wider uppercase">{stat.label}</p>
+    </div>
+  );
+};
+
 const About = () => {
   return (
     <section id="about" className="py-32 px-6 md:px-12 lg:px-24">
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
+          <Reveal>
             <p className="text-primary font-medium tracking-wider uppercase text-sm mb-4">
-              About Me
+              {aboutContent.eyebrow}
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-medium mb-8">
-              Engineer, Researcher
+              {aboutContent.title[0]}
               <br />
-              & Problem Solver
+              {aboutContent.title[1]}
             </h2>
-          </div>
-          
-          <div className="space-y-6 text-muted-foreground text-lg">
-            <p>
-              I'm a Software Engineer at SoFi with 5+ years of experience building 
-              backend services, AI/ML systems, and cloud-native applications. I specialize 
-              in Python, AWS, and distributed systems that power financial products at scale.
-            </p>
-            <p>
-              Previously, I worked as an AI/ML Researcher at the University of Utah 
-              and as a Software Engineer at Tata Consultancy Services, where I delivered 
-              machine learning solutions for enterprise clients.
-            </p>
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-16 border-t border-border">
-          {[
-            { number: "5+", label: "Years Experience" },
-            { number: "3", label: "Companies" },
-            { number: "MS", label: "Computer Science" },
-            { number: "2", label: "Degrees" },
-          ].map((stat, index) => (
-            <div key={index} className="text-center md:text-left">
-              <p className="font-display text-4xl md:text-5xl text-primary mb-2">
-                {stat.number}
-              </p>
-              <p className="text-muted-foreground text-sm tracking-wider uppercase">
-                {stat.label}
-              </p>
+          </Reveal>
+
+          <Reveal delay={100}>
+            <div className="space-y-6 text-muted-foreground text-lg">
+              {aboutContent.paragraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
             </div>
-          ))}
+          </Reveal>
         </div>
+
+        <Reveal delay={200}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-16 border-t border-border">
+            {aboutStats.map((stat) => (
+              <StatItem key={stat.label} stat={stat} />
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

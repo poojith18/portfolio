@@ -1,55 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 220 20% 7%;
-    --foreground: 40 20% 95%;
+    --background: 40 25% 97%;
+    --foreground: 220 20% 12%;
 
-    --card: 220 18% 10%;
-    --card-foreground: 40 20% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 12%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 12%;
 
-    --primary: 24 85% 60%;
-    --primary-foreground: 220 20% 7%;
+    --primary: 24 85% 52%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 40 20% 95%;
+    --secondary: 40 15% 92%;
+    --secondary-foreground: 220 20% 12%;
 
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 40 12% 94%;
+    --muted-foreground: 220 10% 42%;
 
-    --accent: 24 85% 60%;
-    --accent-foreground: 220 20% 7%;
+    --accent: 24 85% 52%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 40 20% 95%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 24 85% 60%;
+    --border: 40 12% 88%;
+    --input: 40 12% 88%;
+    --ring: 24 85% 52%;
 
     --radius: 0.5rem;
 
-    /* Custom tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(24 85% 60% / 0.1), hsl(220 20% 7%));
-    --gradient-card: linear-gradient(180deg, hsl(220 18% 12%), hsl(220 18% 8%));
-    --shadow-glow: 0 0 60px hsl(24 85% 60% / 0.15);
-    --shadow-card: 0 20px 40px -15px hsl(0 0% 0% / 0.5);
-
-    --sidebar-background: 220 18% 10%;
-    --sidebar-foreground: 40 20% 95%;
-    --sidebar-primary: 24 85% 60%;
-    --sidebar-primary-foreground: 220 20% 7%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 40 20% 95%;
-    --sidebar-border: 220 15% 20%;
-    --sidebar-ring: 24 85% 60%;
+    --gradient-hero: linear-gradient(135deg, hsl(24 85% 60% / 0.12), hsl(40 25% 97%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(40 15% 96%));
+    --shadow-glow: 0 0 60px hsl(24 85% 60% / 0.12);
+    --shadow-card: 0 20px 40px -15px hsl(220 20% 12% / 0.08);
   }
 
   .dark {
@@ -81,14 +69,10 @@
     --input: 220 15% 20%;
     --ring: 24 85% 60%;
 
-    --sidebar-background: 220 18% 10%;
-    --sidebar-foreground: 40 20% 95%;
-    --sidebar-primary: 24 85% 60%;
-    --sidebar-primary-foreground: 220 20% 7%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 40 20% 95%;
-    --sidebar-border: 220 15% 20%;
-    --sidebar-ring: 24 85% 60%;
+    --gradient-hero: linear-gradient(135deg, hsl(24 85% 60% / 0.1), hsl(220 20% 7%));
+    --gradient-card: linear-gradient(180deg, hsl(220 18% 12%), hsl(220 18% 8%));
+    --shadow-glow: 0 0 60px hsl(24 85% 60% / 0.15);
+    --shadow-card: 0 20px 40px -15px hsl(0 0% 0% / 0.5);
   }
 }
 
@@ -97,13 +81,26 @@
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', sans-serif;
+  html {
+    scroll-behavior: smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: "Inter", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
   }
 }
 
@@ -141,7 +138,7 @@
   }
 
   .link-underline::after {
-    content: '';
+    content: "";
     @apply absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300;
   }
 
@@ -158,5 +155,27 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hover-lift:hover {
+    transform: none;
+  }
+
+  .animate-marquee {
+    animation: none !important;
   }
 }

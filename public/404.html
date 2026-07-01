@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Redirecting…</title>
     <script type="text/javascript">
-      var path = window.location.pathname;
-      window.location.replace("/portfolio/" + path.substring(1));
+      var segment = window.location.pathname.replace(/^\/portfolio\/?/, "");
+      var hash = window.location.hash || "#/";
+      window.location.replace("/portfolio/" + (segment ? segment : "") + hash);
     </script>
   </head>
   <body></body>
